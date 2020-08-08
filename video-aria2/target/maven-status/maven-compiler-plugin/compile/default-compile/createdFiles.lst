@@ -1,0 +1,16 @@
+com/yan/video/aria2/dto/ProgressResp.class
+com/yan/video/aria2/config/RestTemplateConfig.class
+com/yan/video/aria2/AriaApplication.class
+com/yan/video/aria2/dto/AriaQueryReqOption.class
+com/yan/video/aria2/schedule/VideoUrlUpdateTask.class
+com/yan/video/aria2/dao/DownloadDao.class
+com/yan/video/aria2/service/impl/DownloadServiceImpl.class
+com/yan/video/aria2/config/Constants.class
+com/yan/video/aria2/config/MybatisConfig.class
+com/yan/video/aria2/dto/AriaResp.class
+com/yan/video/aria2/dto/AddTaskParam.class
+com/yan/video/aria2/service/DownloadService.class
+com/yan/video/aria2/dto/AriaDownloadReqOption.class
+com/yan/video/aria2/dto/AriaReq.class
+com/yan/video/aria2/config/SwaggerConfig.class
+com/yan/video/aria2/controller/DownloadController.class

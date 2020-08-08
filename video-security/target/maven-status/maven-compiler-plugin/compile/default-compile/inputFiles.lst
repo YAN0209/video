@@ -1,0 +1,16 @@
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/controller/AuthController.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/service/RedisService.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/config/SecurityConfig.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/util/JwtTokenUtil.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/config/RedisConfig.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/dto/SendCheckCodeParam.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/service/impl/RedisServiceImpl.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/component/RestfulAuthenticationEntryPoint.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/component/JwtTokenFilter.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/service/AuthService.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/dto/RegisterParam.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/component/DynamicSecurityFilter.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/dto/LoginParam.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/SecurityApplication.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/component/RestfulAccessDeniedHandler.java
+/Users/likaiyan/IdeaProjects/video/video-security/src/main/java/com/yan/video/security/service/impl/AuthServiceImpl.java

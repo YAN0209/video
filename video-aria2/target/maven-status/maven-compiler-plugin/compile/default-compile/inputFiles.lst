@@ -1,0 +1,16 @@
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/config/MybatisConfig.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/config/Constants.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dto/AriaQueryReqOption.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dto/AriaResp.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dto/AriaDownloadReqOption.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dao/DownloadDao.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/controller/DownloadController.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dto/AriaReq.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dto/ProgressResp.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/service/DownloadService.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/AriaApplication.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/service/impl/DownloadServiceImpl.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/schedule/VideoUrlUpdateTask.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/config/SwaggerConfig.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/config/RestTemplateConfig.java
+/Users/likaiyan/IdeaProjects/video/video-aria2/src/main/java/com/yan/video/aria2/dto/AddTaskParam.java

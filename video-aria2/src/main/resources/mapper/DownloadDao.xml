@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.video.aria2.dao.DownloadDao">
+
+    <select id="getUncreatedFileVideos">
+        select v.* from download_task d left join video v on d.video_id = v.video_id where v.url is null
+    </select>
+
+</mapper>

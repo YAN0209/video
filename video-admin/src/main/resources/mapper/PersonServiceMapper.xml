@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.video.admin.dao.PersonServiceMapper">
+
+    <select id="selectVideoGroupByActorId">
+        select v.* from actor a left join video_group v on a.groupId = v.id where a.personId = #{actorId} and v.deleteTag = 0
+    </select>
+
+    <select id="selectVideoGroupByWriterId">
+        select v.* from writer w left join video_group v on w.groupId = v.id where w.personId = #{writerId} and v.deleteTag = 0
+    </select>
+
+    <select id="selectVideoGroupByDirector">
+        select v.* from director d left join video_group v on d.groupId = v.id where d.personId = #{directorId} and v.deleteTag = 0
+    </select>
+
+    <select id="selectActorByVideoGroupId">
+        select p.* from actor a left join person p on a.personId = p.id where a.groupId = #{groupId} and p.deleteTag = 0
+    </select>
+
+    <select id="selectWriterByVideoGroupId">
+        select p.* from writer w left join person p on w.personId = p.id where w.groupId = #{groupId} and p.deleteTag = 0
+    </select>
+
+    <select id="selectDirectorByVideoGroupId">
+        select p.* from director d left join person p on d.personId = p.id where d.groupId = #{groupId} and p.deleteTag = 0
+    </select>
+
+</mapper>

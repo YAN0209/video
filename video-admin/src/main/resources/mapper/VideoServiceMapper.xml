@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.video.admin.dao.VideoServiceMapper">
+
+    <select id="selectVideoTypeByGroupId">
+        select t.* from video_group_type vgt left join video_type t on vgt.type_id = t.id where vgt.group_id = #{groupId}
+    </select>
+
+    <select id="selectVideoTagByGroupId">
+        select t.* from video_group_tag vgt left join video_tag t on vgt.tag_id = t.id where vgt.tag_id = #{tagId}
+    </select>
+
+</mapper>

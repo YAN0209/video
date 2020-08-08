@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.video.mapper.VideoGroupMapper">
+  <resultMap id="BaseResultMap" type="com.yan.video.entity.VideoGroup">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="rate" jdbcType="REAL" property="rate" />
+    <result column="imdb_id" jdbcType="VARCHAR" property="imdbId" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+    <result column="poster" jdbcType="VARCHAR" property="poster" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="delete_tag" jdbcType="BIT" property="deleteTag" />
+    <result column="lock_tag" jdbcType="BIT" property="lockTag" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, rate, imdb_id, alias, poster, code, delete_tag, lock_tag
+  </sql>
+  <select id="selectByExample" parameterType="com.yan.video.entity.VideoGroupExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from video_group
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from video_group
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from video_group
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yan.video.entity.VideoGroupExample">
+    delete from video_group
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yan.video.entity.VideoGroup">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into video_group (name, rate, imdb_id, 
+      alias, poster, code, 
+      delete_tag, lock_tag)
+    values (#{name,jdbcType=VARCHAR}, #{rate,jdbcType=REAL}, #{imdbId,jdbcType=VARCHAR}, 
+      #{alias,jdbcType=VARCHAR}, #{poster,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{deleteTag,jdbcType=BIT}, #{lockTag,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yan.video.entity.VideoGroup">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into video_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="rate != null">
+        rate,
+      </if>
+      <if test="imdbId != null">
+        imdb_id,
+      </if>
+      <if test="alias != null">
+        alias,
+      </if>
+      <if test="poster != null">
+        poster,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      delete_tag,
+      lock_tag,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        #{rate,jdbcType=REAL},
+      </if>
+      <if test="imdbId != null">
+        #{imdbId,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null">
+        #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="poster != null">
+        #{poster,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      #{deleteTag,jdbcType=BIT},
+      #{lockTag,jdbcType=BIT},
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yan.video.entity.VideoGroupExample" resultType="java.lang.Long">
+    select count(*) from video_group
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update video_group
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rate != null">
+        rate = #{record.rate,jdbcType=REAL},
+      </if>
+      <if test="record.imdbId != null">
+        imdb_id = #{record.imdbId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.alias != null">
+        alias = #{record.alias,jdbcType=VARCHAR},
+      </if>
+      <if test="record.poster != null">
+        poster = #{record.poster,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deleteTag != null">
+        delete_tag = #{record.deleteTag,jdbcType=BIT},
+      </if>
+      <if test="record.lockTag != null">
+        lock_tag = #{record.lockTag,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update video_group
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      rate = #{record.rate,jdbcType=REAL},
+      imdb_id = #{record.imdbId,jdbcType=VARCHAR},
+      alias = #{record.alias,jdbcType=VARCHAR},
+      poster = #{record.poster,jdbcType=VARCHAR},
+      code = #{record.code,jdbcType=VARCHAR},
+      delete_tag = #{record.deleteTag,jdbcType=BIT},
+      lock_tag = #{record.lockTag,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yan.video.entity.VideoGroup">
+    update video_group
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        rate = #{rate,jdbcType=REAL},
+      </if>
+      <if test="imdbId != null">
+        imdb_id = #{imdbId,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null">
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="poster != null">
+        poster = #{poster,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTag != null">
+        delete_tag = #{deleteTag,jdbcType=BIT},
+      </if>
+      <if test="lockTag != null">
+        lock_tag = #{lockTag,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yan.video.entity.VideoGroup">
+    update video_group
+    set name = #{name,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=REAL},
+      imdb_id = #{imdbId,jdbcType=VARCHAR},
+      alias = #{alias,jdbcType=VARCHAR},
+      poster = #{poster,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      delete_tag = #{deleteTag,jdbcType=BIT},
+      lock_tag = #{lockTag,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
